@@ -156,16 +156,16 @@ const content = {
     scroll: "Deslizá para explorar",
     aboutTitle: "Sobre mí",
     about:
-      "Me gusta sentarme con un usuario, entender el problema real que tiene y convertirlo en una solución que tenga sentido.\nEstoy interesado en construir software pensado, mantenible y, cuando es posible, que transforme procesos y datos en mejores decisiones.",
+      "Me gusta entender el problema antes de escribir código.\nNo se trata solo de construir algo que funcione, sino también de pensar en cómo está diseñado, cómo escala, cómo se mantiene y qué información puede generar para respaldar mejores decisiones.\nPara mí, una buena solución es aquella que otra persona puede retomar mañana y entender sin tener que preguntarle a quien la escribió.",
     experienceTitle: "Experiencia",
     experienceKicker:
-      "Me gusta entender el problema antes de escribir código. A lo largo de mi carrera, he trabajado principalmente con datos y desarrollo de soluciones, y algo que siempre disfruto es sentarme con usuarios o clientes para entender realmente qué necesitan y transformar ese problema en una solución técnica que tenga sentido tanto para el negocio como para el contexto en el que se implementará. Me interesa especialmente convertir procesos manuales o mal definidos en soluciones más claras, simples y medibles. No se trata solo de construir algo que funcione, sino también de pensar cómo está diseñado, cómo escala, cómo se mantiene y qué información puede generar para tomar mejores decisiones. Cuando desarrollo software, presto mucha atención a la arquitectura, la lógica de negocio, las integraciones y, sobre todo, a mantener el código claro y mantenible. Para mí, una buena solución también es aquella que otra persona puede recoger mañana y entender sin tener que preguntarle al que la escribió. Mi experiencia como Data Engineer y Data Analyst me ha dado una perspectiva que intento llevar al desarrollo de software: entender los sistemas no solo por cómo funcionan, sino también por qué información generan y cómo esa información puede resultar útil. También incorporo herramientas de IA en mi proceso de desarrollo para investigar, documentar, iterar y construir soluciones más rápido sin perder de vista la calidad. En última instancia, me gusta llegar a ese punto en el que un problema de negocio se convierte en una solución técnica concreta, bien pensada y fácil de entender.",
+      "A lo largo de mi carrera, he trabajado principalmente con datos y desarrollo de soluciones, y algo que siempre disfruto es sentarme con usuarios o clientes, entender qué necesitan realmente y traducir ese problema en una solución técnica que se adapte tanto al contexto del negocio como a la realidad de su implementación.",
     experience: [
       {
         role: "Data Integrity Analyst",
         company: "Hinweiss",
         date: "Oct 2023 — Abr 2026",
-        text: "Desarrollo soluciones backend para integración de sistemas y sincronización de datos entre múltiples fuentes.\nDiseño estructuras de datos y flujos de procesamiento, creo dashboards internos y trabajo directamente con stakeholders.",
+        text: "Desarrollé soluciones backend para la integración de sistemas y la sincronización de datos en tiempo real\nConstruí herramientas internas y dashboards para el consumo de datos del negocio\nTrabajé directamente con las partes interesadas para comprender sus necesidades y traducirlas en soluciones técnicas.",
       },
       {
         role: "RPA Provisioning",
