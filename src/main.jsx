@@ -337,9 +337,23 @@ function App() {
         <button
           className="language"
           onClick={() => setLang(lang === "en" ? "es" : "en")}
-          aria-label={`Switch to ${lang === "en" ? "Spanish" : "English"}`}
+          aria-label={`Current language: ${lang === "en" ? "English" : "Spanish"}. Switch to ${lang === "en" ? "Spanish" : "English"}`}
+          aria-pressed={lang === "es"}
         >
-           {lang === "en" ? "ES" : "EN"} <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
+          <span
+            className={
+              lang === "es" ? "language-option active" : "language-option"
+            }
+          >
+            ES
+          </span>
+          <span
+            className={
+              lang === "en" ? "language-option active" : "language-option"
+            }
+          >
+            EN
+          </span>
         </button>
       </header>
       <main id="top">
@@ -349,7 +363,7 @@ function App() {
             <h1>
               Jonattan
               <br />
-              <em>Lima</em>
+              <em>Lima.</em>
             </h1>
             <p className="role">
               <span>{roleText}</span>
@@ -360,32 +374,32 @@ function App() {
               <button className="email" onClick={copyEmail}>
                 <span>{links.email}</span>
                 <span className="copy-icon" aria-hidden="true">
-                   <FontAwesomeIcon icon={copied ? faCheck : faCopy} aria-hidden="true" />
+                  <FontAwesomeIcon
+                    icon={copied ? faCheck : faCopy}
+                    aria-hidden="true"
+                  />
                 </span>
                 <span className="sr-only">{copied ? t.copied : t.copy}</span>
               </button>
               <a className="button primary cv-download" href={cv} download>
-                {t.download} <FontAwesomeIcon icon={faFileExport} aria-hidden="true" />
+                {t.download}{" "}
+                <FontAwesomeIcon icon={faFileExport} aria-hidden="true" />
               </a>
             </div>
             <div className="socials">
               <a href={links.linkedin} target="_blank" rel="noreferrer">
-                 <FontAwesomeIcon icon={faLinkedin} aria-hidden="true" />
+                <FontAwesomeIcon icon={faLinkedin} aria-hidden="true" />
                 {t.linkedin}
               </a>
               <a href={links.github} target="_blank" rel="noreferrer">
-                 <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
+                <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
                 {t.github}
               </a>
             </div>
           </div>
           <div className="portrait-wrap">
             <div className="portrait-ring" />
-            <img
-              className="portrait"
-              src={profileImage}
-              alt="Jonattan Lima"
-            />
+            <img className="portrait" src={profileImage} alt="Jonattan Lima" />
           </div>
           <a className="scroll" href="#about">
             <span className="scroll-line" />
@@ -400,14 +414,14 @@ function App() {
           ))}
           <div className="skill-list">
             <span>{t.skillsTitle}</span>
-             <p className="skill-items">
-               {skills.map(([name, icon]) => (
-                 <span className="skill-item" key={name}>
-                   <FontAwesomeIcon icon={icon} aria-hidden="true" />
-                   {name}
-                 </span>
-               ))}
-             </p>
+            <p className="skill-items">
+              {skills.map(([name, icon]) => (
+                <span className="skill-item" key={name}>
+                  <FontAwesomeIcon icon={icon} aria-hidden="true" />
+                  {name}
+                </span>
+              ))}
+            </p>
           </div>
         </Section>
         <Section
@@ -419,9 +433,9 @@ function App() {
           <div className="timeline">
             {t.experience.map((item, i) => (
               <article className="timeline-item" key={item.company}>
-                 <span className="timeline-index">
-                   <FontAwesomeIcon icon={faBriefcase} aria-hidden="true" />
-                 </span>
+                <span className="timeline-index">
+                  <FontAwesomeIcon icon={faBriefcase} aria-hidden="true" />
+                </span>
                 <div>
                   <div className="item-heading">
                     <h3>
@@ -471,9 +485,9 @@ function App() {
         </Section>
         <Section id="education" number="05" title={t.educationTitle}>
           <article className="education-card">
-             <span className="timeline-index">
-               <FontAwesomeIcon icon={faGraduationCap} aria-hidden="true" />
-             </span>
+            <span className="timeline-index">
+              <FontAwesomeIcon icon={faGraduationCap} aria-hidden="true" />
+            </span>
             <div>
               <div className="item-heading">
                 <h3>{t.educationName}</h3>
@@ -489,9 +503,13 @@ function App() {
             </h2>
             {visibleCerts.map((cert, i) => (
               <div className="cert" key={cert}>
-                 <span className="cert-number">0{i + 1}</span>
-                 <p>{cert}</p>
-                 <FontAwesomeIcon className="cert-icon" icon={faCertificate} aria-hidden="true" />
+                <span className="cert-number">0{i + 1}</span>
+                <p>{cert}</p>
+                <FontAwesomeIcon
+                  className="cert-icon"
+                  icon={faCertificate}
+                  aria-hidden="true"
+                />
               </div>
             ))}
             {!showAllCerts && t.certifications.length > 5 && (
@@ -510,7 +528,11 @@ function App() {
           <h2>{t.contactTitle}</h2>
           <p>{t.contactText}</p>
           <a className="button primary" href={`mailto:${links.email}`}>
-             {t.getInTouch} <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
+            {t.getInTouch}{" "}
+            <FontAwesomeIcon
+              icon={faArrowUpRightFromSquare}
+              aria-hidden="true"
+            />
           </a>
           <footer>
             <span>© 2026 Jonattan Lima</span>
@@ -531,11 +553,15 @@ function Project({ project, index, t }) {
       <span className="project-status">{t.status}</span>
       <div className="project-links">
         <a href={project.github_url} target="_blank" rel="noreferrer">
-           {t.viewGithub} <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
+          {t.viewGithub} <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
         </a>
         {project.demo_url && (
           <a href={project.demo_url} target="_blank" rel="noreferrer">
-             {t.viewDemo} <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
+            {t.viewDemo}{" "}
+            <FontAwesomeIcon
+              icon={faArrowUpRightFromSquare}
+              aria-hidden="true"
+            />
           </a>
         )}
       </div>

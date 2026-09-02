@@ -75,14 +75,36 @@ nav a:hover,
   color: #fff;
 }
 .language {
-  background: transparent;
-  border: 0;
+  align-items: center;
+  background: #0b0c0b;
+  border: 1px solid var(--orange);
+  border-radius: 999px;
   cursor: pointer;
-  padding: 8px 0;
+  display: inline-flex;
+  font-weight: 500;
+  gap: 3px;
+  height: 32px;
+  justify-content: center;
+  padding: 3px;
+  width: 76px;
 }
-.language svg {
+.language-option {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  line-height: 1;
+  width: 31px;
+}
+.language-option.active {
+  background: var(--orange);
+  color: #0b0c0b;
+  font-weight: 800;
+}
+.language-divider {
   color: var(--orange);
-  margin-left: 5px;
+  font-weight: 700;
 }
 .hero {
   align-items: center;
@@ -540,6 +562,14 @@ footer {
   }
   .topbar {
     padding: 22px 6vw;
+  }
+  .language {
+    height: 30px;
+    width: 72px;
+  }
+  .language-option {
+    height: 22px;
+    width: 29px;
   }
   .hero {
     display: flex;
