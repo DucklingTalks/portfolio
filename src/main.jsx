@@ -14,6 +14,7 @@ import {
   faMugHot,
   faTerminal,
   faServer,
+  faPersonHiking,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faAws,
@@ -73,7 +74,7 @@ const content = {
       {
         title: "Trivia",
         github_url: "https://github.com/DucklingTalks/Trivia",
-        demo_url: "",
+        demo_url: "https://trivia-frontend-f77n.onrender.com",
         type: "Featured project",
         text: "Project description and impact to be completed.",
         featured: true,
@@ -81,7 +82,8 @@ const content = {
       {
         title: "gestjobs",
         github_url: "https://github.com/DucklingTalks/gestjobs",
-        demo_url: "",
+        demo_url:
+          "https://gestjobs-git-feature-gestjobs-mvp-jonattan-limas-projects.vercel.app/dashboard",
         type: "Featured project",
         text: "Project description and impact to be completed.",
         featured: true,
@@ -566,10 +568,7 @@ function Project({ project, index, t }) {
         {project.demo_url && (
           <a href={project.demo_url} target="_blank" rel="noreferrer">
             {t.viewDemo}{" "}
-            <FontAwesomeIcon
-              icon={faArrowUpRightFromSquare}
-              aria-hidden="true"
-            />
+            <FontAwesomeIcon icon={faPersonHiking} aria-hidden="true" />
           </a>
         )}
       </div>

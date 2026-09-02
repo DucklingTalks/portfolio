@@ -446,12 +446,17 @@ nav a:hover,
 .project-card a {
   color: var(--orange);
   font:
-    0.67rem "DM Mono",
+    0.9rem "DM Mono",
     monospace;
   margin-top: 28px;
   text-transform: uppercase;
+  transition: color 0.2s;
+}
+.project-card a:hover {
+  color: #fff;
 }
 .project-card a svg {
+  color: currentColor;
   margin-left: 7px;
 }
 h2.subsection-title {
