@@ -1,5 +1,28 @@
 import { StrictMode, useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUpRightFromSquare,
+  faBriefcase,
+  faCertificate,
+  faCheck,
+  faCode,
+  faCopy,
+  faDatabase,
+  faFileExport,
+  faGraduationCap,
+  faMugHot,
+  faTerminal,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faAws,
+  faGitAlt,
+  faGithub,
+  faJs,
+  faLinkedin,
+  faPython,
+  faReact,
+} from "@fortawesome/free-brands-svg-icons";
 import "./styles.css";
 import profileImage from "../resources/images/perfil.jpeg";
 import developerCvEnglish from "../resources/cv/Developer - English.pdf";
@@ -226,19 +249,18 @@ const content = {
   },
 };
 
-function Icon({ name }) {
-  if (name === "github")
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.4 18 4.7 18 4.7c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.3.7 1 .7 2v2.5c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z" />
-      </svg>
-    );
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.5 3.5h-17a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h17a1 1 0 0 0 1-1v-15a1 1 0 0 0-1-1ZM8 18H5v-8h3v8ZM6.5 8.9A1.75 1.75 0 1 1 6.5 5.4a1.75 1.75 0 0 1 0 3.5ZM19 18h-3v-3.9c0-.9 0-2-1.3-2s-1.5 1-1.5 1.9V18h-3v-8h2.9v1.1h.1c.4-.8 1.4-1.3 2.5-1.3 3 0 3.3 2 3.3 4.5V18Z" />
-    </svg>
-  );
-}
+const skills = [
+  ["Java", faMugHot],
+  ["Python", faPython],
+  ["C# / .NET", faCode],
+  ["JavaScript", faJs],
+  ["React", faReact],
+  ["SQL", faDatabase],
+  ["PostgreSQL", faDatabase],
+  ["AWS", faAws],
+  ["Git / GitHub", faGitAlt],
+  ["Bash", faTerminal],
+];
 
 function App() {
   const [lang, setLang] = useState(() =>
@@ -317,7 +339,7 @@ function App() {
           onClick={() => setLang(lang === "en" ? "es" : "en")}
           aria-label={`Switch to ${lang === "en" ? "Spanish" : "English"}`}
         >
-          {lang === "en" ? "ES" : "EN"} <span>↗</span>
+           {lang === "en" ? "ES" : "EN"} <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
         </button>
       </header>
       <main id="top">
@@ -338,21 +360,21 @@ function App() {
               <button className="email" onClick={copyEmail}>
                 <span>{links.email}</span>
                 <span className="copy-icon" aria-hidden="true">
-                  {copied ? "✓" : "⧉"}
+                   <FontAwesomeIcon icon={copied ? faCheck : faCopy} aria-hidden="true" />
                 </span>
                 <span className="sr-only">{copied ? t.copied : t.copy}</span>
               </button>
-              <a className="button primary" href={cv} download>
-                {t.download} <span>↓</span>
+              <a className="button primary cv-download" href={cv} download>
+                {t.download} <FontAwesomeIcon icon={faFileExport} aria-hidden="true" />
               </a>
             </div>
             <div className="socials">
               <a href={links.linkedin} target="_blank" rel="noreferrer">
-                <Icon name="linkedin" />
+                 <FontAwesomeIcon icon={faLinkedin} aria-hidden="true" />
                 {t.linkedin}
               </a>
               <a href={links.github} target="_blank" rel="noreferrer">
-                <Icon name="github" />
+                 <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
                 {t.github}
               </a>
             </div>
@@ -378,10 +400,14 @@ function App() {
           ))}
           <div className="skill-list">
             <span>{t.skillsTitle}</span>
-            <p>
-              Java <i /> Python <i /> C# / .NET <i /> JavaScript <i /> React{" "}
-              <i /> SQL <i /> PostgreSQL <i /> AWS
-            </p>
+             <p className="skill-items">
+               {skills.map(([name, icon]) => (
+                 <span className="skill-item" key={name}>
+                   <FontAwesomeIcon icon={icon} aria-hidden="true" />
+                   {name}
+                 </span>
+               ))}
+             </p>
           </div>
         </Section>
         <Section
@@ -393,7 +419,9 @@ function App() {
           <div className="timeline">
             {t.experience.map((item, i) => (
               <article className="timeline-item" key={item.company}>
-                <span className="timeline-index">🟠</span>
+                 <span className="timeline-index">
+                   <FontAwesomeIcon icon={faBriefcase} aria-hidden="true" />
+                 </span>
                 <div>
                   <div className="item-heading">
                     <h3>
@@ -443,7 +471,9 @@ function App() {
         </Section>
         <Section id="education" number="05" title={t.educationTitle}>
           <article className="education-card">
-            <span className="timeline-index">01</span>
+             <span className="timeline-index">
+               <FontAwesomeIcon icon={faGraduationCap} aria-hidden="true" />
+             </span>
             <div>
               <div className="item-heading">
                 <h3>{t.educationName}</h3>
@@ -459,9 +489,9 @@ function App() {
             </h2>
             {visibleCerts.map((cert, i) => (
               <div className="cert" key={cert}>
-                <span>0{i + 1}</span>
-                <p>{cert}</p>
-                <span>↗</span>
+                 <span className="cert-number">0{i + 1}</span>
+                 <p>{cert}</p>
+                 <FontAwesomeIcon className="cert-icon" icon={faCertificate} aria-hidden="true" />
               </div>
             ))}
             {!showAllCerts && t.certifications.length > 5 && (
@@ -480,7 +510,7 @@ function App() {
           <h2>{t.contactTitle}</h2>
           <p>{t.contactText}</p>
           <a className="button primary" href={`mailto:${links.email}`}>
-            {t.getInTouch} <span>↗</span>
+             {t.getInTouch} <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
           </a>
           <footer>
             <span>© 2026 Jonattan Lima</span>
@@ -501,11 +531,11 @@ function Project({ project, index, t }) {
       <span className="project-status">{t.status}</span>
       <div className="project-links">
         <a href={project.github_url} target="_blank" rel="noreferrer">
-          {t.viewGithub} <span>↗</span>
+           {t.viewGithub} <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
         </a>
         {project.demo_url && (
           <a href={project.demo_url} target="_blank" rel="noreferrer">
-            {t.viewDemo} <span>↗</span>
+             {t.viewDemo} <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
           </a>
         )}
       </div>

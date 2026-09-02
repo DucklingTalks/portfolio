@@ -80,7 +80,7 @@ nav a:hover,
   cursor: pointer;
   padding: 8px 0;
 }
-.language span {
+.language svg {
   color: var(--orange);
   margin-left: 5px;
 }
@@ -159,7 +159,7 @@ nav a:hover,
 }
 .copy-icon {
   color: var(--orange);
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 .button {
   border: 1px solid var(--line);
@@ -170,6 +170,13 @@ nav a:hover,
   gap: 20px;
   padding: 16px 19px;
   text-transform: uppercase;
+}
+.cv-download {
+  width: 220px;
+  justify-content: space-between;
+}
+.button svg {
+  font-size: 1.15rem;
 }
 .button.primary {
   background: var(--orange);
@@ -199,9 +206,7 @@ nav a:hover,
   color: var(--orange);
 }
 .socials svg {
-  fill: currentColor;
-  height: 16px;
-  width: 16px;
+  font-size: 1.25rem;
 }
 .portrait-wrap {
   align-items: center;
@@ -273,6 +278,10 @@ nav a:hover,
     0.68rem "DM Mono",
     monospace;
 }
+.timeline-index svg {
+  color: var(--orange);
+  width: 16px;
+}
 .section h2 {
   font-size: clamp(2rem, 4vw, 4.2rem);
   letter-spacing: -0.07em;
@@ -300,13 +309,19 @@ nav a:hover,
   font-size: 1rem;
   line-height: 2;
 }
-.skill-list i {
-  background: var(--orange);
-  border-radius: 50%;
-  display: inline-block;
-  height: 4px;
-  margin: 0 12px 3px;
-  width: 4px;
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+.skill-item {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+.skill-item svg {
+  color: var(--orange);
+  font-size: 1.2rem;
 }
 .timeline-item,
 .education-card {
@@ -317,6 +332,9 @@ nav a:hover,
 }
 .timeline-item + .timeline-item {
   border-top: 1px solid var(--line);
+}
+.timeline-index svg {
+  font-size: 1.1rem;
 }
 .item-heading {
   align-items: baseline;
@@ -400,7 +418,7 @@ nav a:hover,
   margin-top: 28px;
   text-transform: uppercase;
 }
-.project-card a span {
+.project-card a svg {
   margin-left: 7px;
 }
 h2.subsection-title {
@@ -439,11 +457,15 @@ h2.subsection-title {
 .cert p {
   margin: 0;
 }
-.cert span {
+.cert-number,
+.cert-icon {
   color: var(--orange);
   font:
-    0.7rem "DM Mono",
+    1rem "DM Mono",
     monospace;
+}
+.cert-icon {
+  font-size: 1.25rem;
 }
 .contact {
   border-top: 1px solid var(--line);
@@ -489,6 +511,9 @@ footer {
   display: flex;
   gap: 20px;
   justify-content: space-between;
+}
+.project-links svg {
+  font-size: 1.05rem;
 }
 .show-more {
   background: transparent;

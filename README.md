@@ -13,6 +13,7 @@ The portfolio presents Jonattan's professional profile, experience, selected pro
 - JavaScript
 - CSS
 - Static assets bundled by Vite
+- Font Awesome React with individually imported solid and brand icons
 
 No backend or database is required. The application is a static site and can be hosted on any platform that serves the generated `dist/` directory.
 
@@ -29,6 +30,7 @@ No backend or database is required. The application is a static site and can be 
 - LinkedIn and GitHub links
 - Experience, projects, education, certifications, and contact sections
 - Dark professional visual design with orange accents
+- Font Awesome icons for actions, social links, technologies, experience, projects, and certifications
 - Semantic markup, keyboard focus states, and accessible labels
 
 ## Requirements
