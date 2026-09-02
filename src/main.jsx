@@ -13,6 +13,7 @@ import {
   faGraduationCap,
   faMugHot,
   faTerminal,
+  faServer,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faAws,
@@ -256,7 +257,7 @@ const skills = [
   ["JavaScript", faJs],
   ["React", faReact],
   ["SQL", faDatabase],
-  ["PostgreSQL", faDatabase],
+  ["BigQuery", faServer],
   ["AWS", faAws],
   ["Git / GitHub", faGitAlt],
   ["Bash", faTerminal],
@@ -407,21 +408,28 @@ function App() {
           </a>
         </section>
         <Section id="about" number="02" title={t.aboutTitle}>
-          {aboutParagraphs.map((paraph, index) => (
-            <p key={`${paraph.slice(0, 12)}-${index}`} className="large-copy">
-              {paraph}
-            </p>
-          ))}
-          <div className="skill-list">
-            <span>{t.skillsTitle}</span>
-            <p className="skill-items">
-              {skills.map(([name, icon]) => (
-                <span className="skill-item" key={name}>
-                  <FontAwesomeIcon icon={icon} aria-hidden="true" />
-                  {name}
-                </span>
+          <div className="about-layout">
+            <div className="about-copy">
+              {aboutParagraphs.map((paraph, index) => (
+                <p
+                  key={`${paraph.slice(0, 12)}-${index}`}
+                  className="large-copy"
+                >
+                  {paraph}
+                </p>
               ))}
-            </p>
+            </div>
+            <aside className="skill-list">
+              <span>{t.skillsTitle}</span>
+              <p className="skill-items">
+                {skills.map(([name, icon]) => (
+                  <span className="skill-item" key={name}>
+                    <FontAwesomeIcon icon={icon} aria-hidden="true" />
+                    {name}
+                  </span>
+                ))}
+              </p>
+            </aside>
           </div>
         </Section>
         <Section
