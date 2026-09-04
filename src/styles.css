@@ -174,7 +174,9 @@ nav a:hover,
     0.75rem "DM Mono",
     monospace;
   gap: 16px;
+  height: 50px;
   padding: 15px 17px;
+  width: 220px;
 }
 .email:hover {
   border-color: var(--orange);
@@ -194,6 +196,7 @@ nav a:hover,
   text-transform: uppercase;
 }
 .cv-download {
+  height: 50px;
   width: 220px;
   justify-content: space-between;
 }
