@@ -681,6 +681,11 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 400px) {
+  .project-links svg {
+    display: none;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
