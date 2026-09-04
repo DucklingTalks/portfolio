@@ -181,7 +181,7 @@ const content = {
       {
         title: "Trivia",
         github_url: "https://github.com/DucklingTalks/Trivia",
-        demo_url: "",
+        demo_url: "https://trivia-frontend-f77n.onrender.com",
         type: "Proyecto destacado",
         text: "Descripción e impacto por completar.",
         featured: true,
@@ -189,7 +189,8 @@ const content = {
       {
         title: "gestjobs",
         github_url: "https://github.com/DucklingTalks/gestjobs",
-        demo_url: "",
+        demo_url:
+          "https://gestjobs-git-feature-gestjobs-mvp-jonattan-limas-projects.vercel.app/dashboard",
         type: "Proyecto destacado",
         text: "Descripción e impacto por completar.",
         featured: true,
