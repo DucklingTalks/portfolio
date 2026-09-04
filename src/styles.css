@@ -386,6 +386,7 @@ nav a:hover,
 }
 .timeline-index svg {
   font-size: 1.1rem;
+  margin-top: 4px;
 }
 .item-heading {
   align-items: baseline;
