@@ -134,7 +134,7 @@ nav a:hover,
 .hero h1 {
   font-size: clamp(4.4rem, 10vw, 9rem);
   letter-spacing: -0.09em;
-  line-height: 0.82;
+  line-height: 1;
   margin: 30px 0 25px;
 }
 .role {
@@ -513,7 +513,7 @@ h2.subsection-title {
 .contact h2 {
   font-size: clamp(3rem, 8vw, 8.5rem);
   letter-spacing: -0.1em;
-  line-height: 0.85;
+  line-height: 1;
   margin: 35px 0;
   max-width: 850px;
 }
