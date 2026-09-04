@@ -288,7 +288,7 @@ function App() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const target = content[lang].roles[roleIndex];
-    const delay = deleting ? 55 : roleText === target ? 1800 : 105;
+    const delay = deleting ? 10 : roleText === target ? 1000 : 55;
     const timer = setTimeout(() => {
       if (!deleting && roleText === target) setDeleting(true);
       else if (deleting && roleText === "") {
