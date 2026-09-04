@@ -489,7 +489,7 @@ function App() {
                 <Project
                   key={project.title}
                   project={project}
-                  index={i + 2}
+                  index={i}
                   t={t}
                 />
               ))}
