@@ -524,6 +524,7 @@ h2.subsection-title {
 }
 .contact .button {
   margin-top: 22px;
+  align-items: center;
 }
 footer {
   border-top: 1px solid var(--line);
