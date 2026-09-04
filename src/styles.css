@@ -41,10 +41,27 @@ a:focus-visible {
   justify-content: space-between;
   left: 0;
   padding: 28px 5vw;
-  position: absolute;
+  background: rgba(16, 17, 16, 0.94);
+  position: sticky;
   right: 0;
   top: 0;
   z-index: 2;
+}
+.menu-toggle {
+  background: transparent;
+  border: 1px solid var(--orange);
+  cursor: pointer;
+  display: none;
+  height: 32px;
+  padding: 7px;
+  width: 36px;
+}
+.menu-toggle span {
+  background: currentColor;
+  display: block;
+  height: 1px;
+  margin: 3px 0;
+  width: 20px;
 }
 .brand {
   font-size: 1.15rem;
@@ -574,8 +591,31 @@ footer {
   transform: translateY(-2px);
 }
 @media (max-width: 720px) {
+  .menu-toggle {
+    color: var(--orange);
+    display: block;
+    margin-left: auto;
+    margin-right: 12px;
+    border-radius: 50px;
+  }
   nav {
     display: none;
+  }
+  nav.is-open {
+    background: rgba(16, 17, 16, 0.98);
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    left: 0;
+    margin: 0;
+    padding: 12px 6vw 16px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+  }
+  nav.is-open a {
+    padding: 12px 0;
   }
   .topbar {
     padding: 22px 6vw;

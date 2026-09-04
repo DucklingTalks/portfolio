@@ -276,6 +276,7 @@ function App() {
   const [roleText, setRoleText] = useState(content[lang].roles[0]);
   const [deleting, setDeleting] = useState(false);
   const [showAllCerts, setShowAllCerts] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const t = useMemo(() => content[lang], [lang]);
   const aboutParagraphs = t.about.split("\n").filter(Boolean);
   const visibleCerts = showAllCerts
@@ -321,7 +322,23 @@ function App() {
         <a className="brand" href="#top" aria-label="Jonattan Lima home">
           JL<span>.</span>
         </a>
-        <nav aria-label="Primary navigation">
+        <button
+          type="button"
+          className="menu-toggle"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </button>
+        <nav
+          id="primary-navigation"
+          className={menuOpen ? "is-open" : ""}
+          aria-label="Primary navigation"
+        >
           {t.nav.map((item, i) => (
             <a
               href={
@@ -334,6 +351,7 @@ function App() {
                 ][i]
               }
               key={item}
+              onClick={() => setMenuOpen(false)}
             >
               {item}
             </a>
