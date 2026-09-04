@@ -2,6 +2,7 @@ import { StrictMode, useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faArrowDown,
   faArrowUpRightFromSquare,
   faBriefcase,
   faCertificate,
@@ -406,7 +407,7 @@ function App() {
             <img className="portrait" src={profileImage} alt="Jonattan Lima" />
           </div>
           <a className="scroll" href="#about">
-            <span className="scroll-line" />
+            <FontAwesomeIcon icon={faArrowDown} aria-hidden="true" />
             {t.scroll}
           </a>
         </section>

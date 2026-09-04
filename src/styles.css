@@ -275,11 +275,9 @@ nav a:hover,
   position: absolute;
   text-transform: uppercase;
 }
-.scroll-line {
-  background: var(--orange);
-  display: block;
-  height: 2px;
-  width: 37px;
+.scroll svg {
+  color: var(--orange);
+  font-size: 0.85rem;
 }
 .section {
   border-top: 1px solid var(--line);
@@ -611,8 +609,7 @@ footer {
     right: -10px;
   }
   .scroll {
-    bottom: 25px;
-    left: 6vw;
+    display: none;
   }
   .section,
   .contact {
